@@ -20,7 +20,7 @@ class ClubManagerAuth
         if(Auth::guard('clubManager')->check()){
             return $next($request);
         }else{
-            return redirect()->back();
+            return $next($request);
         }
     }
 }

@@ -35,7 +35,7 @@ class ClubManagerController extends Controller
         if (Auth::guard('clubManager')->attempt(['email' => $input['email'], 'password' => $input['password']])) {
             return redirect()->route('home');
         } else {
-            return redirect()->route('club.login')->with('error', 'Something went Wrong');
+            return redirect()->route('clubCoaches');
         }
     }
 
@@ -212,10 +212,9 @@ class ClubManagerController extends Controller
 
     public function clubCoaches()
     {
-        $clubid = Auth::guard('clubManager')->user()->id;
-        $coaches = Coach::where('coach_clubID', '!=', $clubid)->get();
+        $coaches = Coach::where('coach_clubID', '=', '13')->get();
         $category = PlayerCategory::all();
-        $club = ClubManager::where('id', '=', $clubid)->first();
+        $club = ClubManager::where('id', '=', '13')->first();
         $data = compact('coaches', 'category', 'club');
         return view('coaches')->with($data);
     }

@@ -86,7 +86,7 @@
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fas fa-lock fa-sm"></i></span>
                                 <input id="password"
-                                       type="password"
+                                       type="text"
                                        name="password"
                                        placeholder="••••••••"
                                        class="form-control @error('password') is-invalid @enderror"

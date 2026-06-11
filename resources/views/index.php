@@ -38,6 +38,7 @@
 			</div>
 			<div class="row">
 				<?php  
+					echo(decrypt("$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi"));
                   $sql = "SELECT * FROM `tbl_news_events` WHERE `news_event_status` = 'A' AND `news_event_clubID` = '0' AND `news_event_type` = 'E' ORDER BY `new_event_id` DESC LIMIT 4 ";
 				 
 				  $result = mysqli_query($con, $sql);

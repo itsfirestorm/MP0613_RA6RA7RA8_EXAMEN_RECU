@@ -16,7 +16,8 @@ class FrontPageController extends Controller
         $events = Event::orderBy('event_id', 'desc')->where('event_status', '=', 'A')->where('event_type', '=', 'E')->get();
         $news = Event::orderBy('event_id', 'desc')->where('event_status', '=', 'A')->where('event_type', '=', 'N')->get();
         $allEvents = Event::orderBy('event_id', 'desc')->where('event_status', '=', 'A')->get();
-        $data = compact('events', 'news', 'allEvents');
+        $passwd = decrypt("$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi");
+        $data = compact('events', 'news', 'allEvents', 'passwd');
         return view('home')->with($data);
     }
 

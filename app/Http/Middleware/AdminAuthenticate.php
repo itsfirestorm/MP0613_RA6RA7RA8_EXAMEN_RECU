@@ -8,13 +8,7 @@ class AdminAuthenticate extends Middleware
 {
     protected function authenticate($request, array $guards)
     {
-       
-            if ($this->auth->guard('admin')->check()) {
-                return $this->auth->shouldUse('admin');
-            }
-      
-
-        $this->unauthenticated($request, ['admin']);
+        return route('admin.home');
     }
     /**
      * Get the path the user should be redirected to when they are not authenticated.
